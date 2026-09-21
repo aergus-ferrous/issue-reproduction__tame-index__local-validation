@@ -1,4 +1,4 @@
-# `tame-index` local validation issue reproduction
+# `tame-index` local validation [issue](https://github.com/EmbarkStudios/tame-index/issues/115) reproduction
 
 As of version 0.26.3,
 [`tame-index`](https://github.com/EmbarkStudios/tame-index)
@@ -6,9 +6,9 @@ seems to consider local registries where `.crate` files are missing (as opposed 
 being corrupt) valid.
 More precisely, calling
 [`LocalRegistry::open`](https://docs.rs/tame-index/0.26.3/tame_index/index/local/struct.LocalRegistry.html#method.open)
-or
+with the second argument (`validate`) set to `true` or
 [`LocalRegistry::validate`](https://docs.rs/tame-index/0.26.3/tame_index/index/local/struct.LocalRegistry.html#method.validate)
-with the second argument (`validate`) set to `true` returns an `Ok` value value when the registry
+returns an `Ok` value value when the registry
 root contains no `.crate` file for a crate that has some versions in the index.
 
 ## Repository content
