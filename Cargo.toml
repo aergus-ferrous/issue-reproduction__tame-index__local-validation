@@ -1,0 +1,7 @@
+[package]
+name = "tame-index-local-validation-issue-reproduction"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tame-index = { version = "0.26.3", features = ["local"] }
